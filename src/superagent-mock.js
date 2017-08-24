@@ -89,12 +89,12 @@ module.exports = function (superagent, config, logger) {
     if (isNodeServer) { // node server
       const originalPath = this.path;
       this.path = this.url;
-      this._appendQueryString(this); // use superagent implementation of adding the query
+      // this._appendQueryString(this); // use superagent implementation of adding the query
       path = this.path; // save the url together with the query
       this.path = originalPath; // reverse the addition of query to path by _appendQueryString
     } else { // client
       const originalUrl = this.url;
-      this._appendQueryString(this); // use superagent implementation of adding the query
+      // this._appendQueryString(this); // use superagent implementation of adding the query
       path = this.url; // save the url together with the query
       this.url = originalUrl; // reverse the addition of query to url by _appendQueryString
     }
